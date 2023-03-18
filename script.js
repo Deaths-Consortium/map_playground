@@ -149,7 +149,7 @@ function genMap(data) {
   // scaled =  { stage: { x: stg_x, y: stg_y }, center: { x: ctr_x, y: ctr_y }, coefficient: coefficient }
   for (var i = data.length; i--;) {
     let sys = data[i];
-
+    // SCALE_SYSTEM_DISTANCE just multiplies the coodrinates so nodes arent so dense
     nx = (scaled.stage.x + scaled.coefficient * (sys.x - scaled.center.x)) * SCALE_SYSTEM_DISTANCE
     // invert Y (actually the Z axis)
     ny = -(scaled.stage.y + scaled.coefficient * (sys.z - scaled.center.y)) * SCALE_SYSTEM_DISTANCE
@@ -240,6 +240,8 @@ function genLines(data) {
 }
 
 readTextFile("/new.json", genMap);
+console.log("System nodes generated")
 readTextFile("/routes.json", genLines);
+console.log("System lines generated")
 stage.add(linelayer); // lines first cause of zindex
 stage.add(layer);
