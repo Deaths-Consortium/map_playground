@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+    /* background-color: black; */
+    height: 100%;
+    background-color: darkslategrey;
+    color: #ebebeb;
+}
+
+.latency-ok {
+    color: lightgreen;
+}
+
+.latency-bad {
+    color: lightyellow;
+
+}
+
+.latency-horrible {
+    color: lightcoral;
+}
+
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 5px;
+}
+
+.map {
+    background-color: #262626;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.intel {
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+    align-content: space-between;
+    align-items: flex-start;
+}
